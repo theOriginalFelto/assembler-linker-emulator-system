@@ -122,9 +122,6 @@ void Linker::link() {
   ofstream izlaz(this->output);
   if (this->hex)
     formHexOutput(izlaz);
-    // formHexCout();
-  // if (this->relocatable)
-  //   formRelocatableOutput(izlaz);
   izlaz.close();
 }
 
@@ -235,15 +232,6 @@ void Linker::checkForOverlappingSections() {
     }
   }
 }
-
-// void Linker::packCode() {
-//   int currentAddress = 0;
-//   for(Section& section: sections) {
-//     section.startAddress = currentAddress;
-//     currentAddress += section.code.size();
-//     generatedCode.insert(generatedCode.end(), section.code.begin(), section.code.end());
-//   }
-// }
 
 void Linker::packCode() {
   int currentAddress = 0;

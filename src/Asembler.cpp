@@ -763,7 +763,6 @@ int Asembler::processLine(string line) {
 }
 
 int Asembler::processLabelOnly(string label) {
-  // cout << "prepoznata labela!\n";
   if (Symbol::currentSectionNumber == 0) throw NoSectionError(this->lineCnt);
 
   Symbol* symbol = symbolTable.getSymbolByKey(label);
@@ -779,7 +778,6 @@ int Asembler::processLabelOnly(string label) {
 }
 
 int Asembler::processDirective(string line) {
-  // cout << "prepoznata direktiva!\n"; 
   regex reg;
   smatch match;
   string literal;
@@ -916,7 +914,6 @@ int Asembler::processDirective(string line) {
 }
 
 int Asembler::processInstructionWithLabel(string line) {
-  // cout << "prepoznata instrukcija sa labelom!\n";
   if (Symbol::currentSectionNumber == 0) throw NoSectionError(this->lineCnt);
   regex reg;
   smatch match;
@@ -942,7 +939,6 @@ int Asembler::processInstructionWithLabel(string line) {
 }
 
 int Asembler::processInstruction(string line) {
-  // cout << "prepoznata instrukcija!\n";
   if (Symbol::currentSectionNumber == 0) throw NoSectionError(this->lineCnt);
   regex reg;
   smatch match;

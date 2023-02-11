@@ -35,6 +35,7 @@ class Linker{
     map<int, unsigned char> generatedCode;
     SymbolTable symbolTable;
     SymbolTable localSymbolTable;
+    // used to store the section of a symbol (symbol is key, section is value)
     unordered_map<string, string> helperSectionMap;
 
     bool hex;
