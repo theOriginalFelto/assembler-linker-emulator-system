@@ -10,7 +10,7 @@ my_start:
   str r0, 0xFF10 # tim_cfg
 wait:
   ldr r0, my_counter
-  ldr r1, $5
+  ldr r1, $20
   cmp r0, r1
   jne wait
   halt
